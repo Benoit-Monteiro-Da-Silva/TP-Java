@@ -49,7 +49,7 @@ public class Tp1 {
         int x;
         int y;
 
-        System.out.print("Saisir valeur de x : ");
+        System.out.print("Saisir la valeur de x : ");
         x = scanner.nextInt();
         System.out.print("Saisir la valeur de y : ");
         y = scanner.nextInt();
@@ -88,6 +88,7 @@ public class Tp1 {
         System.out.print("Saisir une année : ");
         year = scanner.nextInt();
 
+        //Les années bissextiles sont divisbles par 4 et PAS par 100, ou bien divisibles par 400
         if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
             System.out.println("Oui, l'année " + year + " est bien une année bissextile !");
         } else {
@@ -98,7 +99,24 @@ public class Tp1 {
 
     public static void exercice3_1() {
 
+        int min = 100;
+        int max = 0;
 
+        for (int i = 1 ; i <= 10 ; i++) {
+            double randomDouble = Math.random() * 101;
+            int randomInt = (int) randomDouble;
+            
+            System.out.println("Le nombre " + i + " vaut " + randomInt);
+
+            if (randomInt > max) {
+                max = randomInt;
+            }
+            if (randomInt < min) {
+                min = randomInt;
+            } 
+        }
+
+        System.out.println("Le maximum vaut " + max + " et le minimum vaut " + min);
 
     }
 
