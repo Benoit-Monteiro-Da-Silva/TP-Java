@@ -9,7 +9,7 @@ public class Tp1 {
 	// Méthode principale obligatoire
     public static void main(String[] args) {
 
-        scanner new Scanner(system.in);
+        scanner = new Scanner(System.in);
 
         exercice1_1();
 
@@ -31,10 +31,10 @@ public class Tp1 {
         nom = scanner.next();
 
         System.out.print("Âge : ");
-        age = scanner.next();
+        age = scanner.nextInt();
 
 		// 3° - Utilisation
-        System.out.println("Bonjour " + prenom + nom); //Contrairement à 'print', 'println' passe à la ligne avant d'écrire
+        System.out.println("Bonjour " + prenom + " " + nom);
         System.out.println("Alors comme ça vous avez " + age + " ans ?" );
 
     }
