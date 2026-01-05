@@ -42,7 +42,6 @@ public class Tp1 {
 
     }
 
-
     public static void exercice1_2() {
 
         int x;
@@ -73,10 +72,9 @@ public class Tp1 {
 
         if (firstWord.length() == secondWord.length()) {
             System.out.println("Les deux mots ont le même nombre de caractères.");
-        } else if (firstWord.length() > secondWord.length()) {
-            System.out.println(firstWord + " est le mot avec le plus de caractères.");
         } else {
-            System.out.println(secondWord + " est le mot avec le plus de caractères.");
+            String longerWord = (firstWord.length() > secondWord.length()) ? firstWord : secondWord;
+            System.out.println(longerWord + " est le mot avec le plus de caractères.");
         }
 
     }
