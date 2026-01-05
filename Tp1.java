@@ -15,7 +15,8 @@ public class Tp1 {
         // exercice1_2();
         // exercice2_1();
         // exercice2_2();
-        exercice3_1();
+        // exercice3_1();
+        exercice4_1();
 
         scanner.close();
 
@@ -117,6 +118,39 @@ public class Tp1 {
         }
 
         System.out.println("Le maximum vaut " + max + " et le minimum vaut " + min);
+
+    }
+
+    public static void exercice4_1() {
+
+        //On génère un entier aléatoire compris entre 0 et 100 inclus.
+        double randomDouble = Math.random() * 101;
+        int randomInt = (int) randomDouble;
+
+        //On initialise une valeur différente à coup sûr du nombre aléatoire obtenu (pour rentrer dans la boucle).
+        int guess = 101;
+
+        int trials = 0;
+        int diff;
+
+        while (guess != randomInt) {
+            System.out.print("Entrez un nombre : ");
+            guess = scanner.nextInt();
+            trials++;
+
+            diff = Math.abs(guess - randomInt);
+
+            if (diff > 20) {
+                System.out.println("froid");
+            } else if (diff >= 6 && diff <= 20) {
+                System.out.println("tiède");
+            } else if (diff >=1 && diff <= 5) {
+                System.out.println("chaud");
+            } else {
+                System.out.println("Gagné ! Nombre de tentatives : " + trials); 
+            }
+
+        }
 
     }
 
