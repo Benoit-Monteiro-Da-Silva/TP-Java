@@ -14,7 +14,8 @@ public class Tp1 {
         // exercice1_1();
         // exercice1_2();
         // exercice2_1();
-        exercice2_2();
+        // exercice2_2();
+        exercice3_1();
 
         scanner.close();
 
@@ -87,11 +88,17 @@ public class Tp1 {
         System.out.print("Saisir une année : ");
         year = scanner.nextInt();
 
-        if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+        if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
             System.out.println("Oui, l'année " + year + " est bien une année bissextile !");
         } else {
             System.out.println("Non, l'année " + year + " n'est pas une année bissextile");
         }
+
+    }
+
+    public static void exercice3_1() {
+
+
 
     }
 
