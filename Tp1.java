@@ -100,10 +100,14 @@ public class Tp1 {
 
     public static void exercice3_1() {
 
+        //On initialise le min a la plus grande valeur possible des nombres qui vont être générés.
         int min = 100;
+        //On initialise le max a la plus petite valeur possible des nombres qui vont être générés.
         int max = 0;
 
         for (int i = 1 ; i <= 10 ; i++) {
+            
+            //On génère un nombre entier aléatoire compris entre 0 et 100 inclus.
             double randomDouble = Math.random() * 101;
             int randomInt = (int) randomDouble;
             
