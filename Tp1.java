@@ -13,7 +13,8 @@ public class Tp1 {
 
         // exercice1_1();
         // exercice1_2();
-        exercice2_1();
+        // exercice2_1();
+        exercice2_2();
 
         scanner.close();
 
@@ -75,6 +76,21 @@ public class Tp1 {
         } else {
             String longerWord = (firstWord.length() > secondWord.length()) ? firstWord : secondWord;
             System.out.println(longerWord + " est le mot avec le plus de caractères.");
+        }
+
+    }
+
+    public static void exercice2_2() {
+
+        int year;
+
+        System.out.print("Saisir une année : ");
+        year = scanner.nextInt();
+
+        if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+            System.out.println("Oui, l'année " + year + " est bien une année bissextile !");
+        } else {
+            System.out.println("Non, l'année " + year + " n'est pas une année bissextile");
         }
 
     }
