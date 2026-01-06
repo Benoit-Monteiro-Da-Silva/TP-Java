@@ -11,13 +11,34 @@ public class Tp1 {
 
         scanner = new Scanner(System.in);
 
-        // exercice1_1();
-        // exercice1_2();
-        // exercice2_1();
-        // exercice2_2();
-        // exercice3_1();
-        // exercice4_1();
-        exercice4_1_bis();
+        System.out.print("Quel exercice lancer ? ");
+        String exercice = scanner.next();
+
+        switch (exercice) {
+            case "1_1":
+                exercice1_1();
+                break;
+            case "1_2":
+                exercice1_2();
+                break;
+            case "2_1":
+                exercice2_1();
+                break;
+            case "2_2":
+                exercice2_2();
+                break;
+            case "3_1":
+                exercice3_1();
+                break;
+            case "4_1":
+                exercice4_1();
+                break;
+            case "4_2":
+                exercice4_2();
+                break;
+            default:
+                System.out.println("Cet exercice n'existe pas");
+        }
 
         scanner.close();
 
@@ -87,7 +108,7 @@ public class Tp1 {
 
         int year;
 
-        System.out.print("Saisir une année : ");
+        System.out.print("Saisir une année pour savoir si elle bissextile : ");
         year = scanner.nextInt();
 
         //Les années bissextiles sont divisbles par 4 et PAS par 100, ou bien divisibles par 400
@@ -139,7 +160,7 @@ public class Tp1 {
         int diff;
 
         while (guess != randomInt) {
-            System.out.print("Entrez un nombre : ");
+            System.out.print("Devine le nombre que j'ai en tête : ");
             guess = scanner.nextInt();
             trials++;
 
@@ -160,7 +181,7 @@ public class Tp1 {
     }
 
 
-    public static void exercice4_1_bis() {
+    public static void exercice4_2() {
 
         //On génère un entier aléatoire compris entre 0 et 100 inclus.
         double randomDouble = Math.random() * 101;
@@ -171,7 +192,7 @@ public class Tp1 {
         int diff;
 
         do {
-            System.out.print("Entrez un nombre : ");
+            System.out.print("Devine le nombre que j'ai en tête : ");
             guess = scanner.nextInt();
             trials++;
 
