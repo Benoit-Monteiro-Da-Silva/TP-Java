@@ -10,6 +10,7 @@ public class Tp2 {
 
         // fibonacciFirstMethod();
         fibonacciSecondMethod();
+        // fibonacciThirdMethod();
 
         scanner.close();
 
@@ -43,7 +44,7 @@ public class Tp2 {
                         fibo0 = fibo1;
                         fibo1 = storedValue + fibo0;
                     }
-                    System.out.println("F" + number + " vaut " + fibo1);
+                    System.out.println("F" + number + " = " + fibo1);
             }
         }
 
@@ -62,7 +63,7 @@ public class Tp2 {
             // On crée un tableau correspondant à la taille du nombre saisi, pour stocker les valeurs de la suite
             int[] fiboArray = new int[number + 1];
 
-            //On entre les premières valeurs de la suite de Fibonacci.
+            //On entre les premières valeurs de la suite de Fibonacci dans le tableau.
             fiboArray[0] = 0;
             if (number > 0) fiboArray[1] = 1;
             
@@ -71,15 +72,34 @@ public class Tp2 {
                 fiboArray[i] = fiboArray[i-1] + fiboArray[i-2];
             }
 
-            System.out.println("F" + number + " vaut " + fiboArray[fiboArray.length - 1]);
+            System.out.println("F" + number + " = " + fiboArray[fiboArray.length - 1]);
         }
 
     }
 
+    public static int calculateFibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return calculateFibonacci(n-1) + calculateFibonacci(n-2);
+        }
+    }
+
     public static void fibonacciThirdMethod() {
 
-        
+        System.out.println("FIBO TROISIEME METHODE");
+        System.out.print("Entrez un nombre entier positif : ");
+        int number = scanner.nextInt();
 
+        if (number < 0) {
+            System.out.println("Un entier POSITIF on a dit !");
+        } 
+        else {
+            int result = calculateFibonacci(number);
+            System.out.println("F" + number + " = " + result);
+        }
     }
 
 }

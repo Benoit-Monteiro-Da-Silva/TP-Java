@@ -168,9 +168,9 @@ public class Tp1 {
 
             if (diff > 20) {
                 System.out.println("froid");
-            } else if (diff >= 6 && diff <= 20) {
+            } else if (diff > 5) {
                 System.out.println("tiède");
-            } else if (diff >=1 && diff <= 5) {
+            } else if (diff > 0) {
                 System.out.println("chaud");
             } else {
                 System.out.println("Gagné ! Nombre de tentatives : " + trials); 
@@ -199,9 +199,9 @@ public class Tp1 {
 
             if (diff > 20) {
                 System.out.println("froid");
-            } else if (diff >= 6 && diff <= 20) {
+            } else if (diff > 5) {
                 System.out.println("tiède");
-            } else if (diff >=1 && diff <= 5) {
+            } else if (diff > 0) {
                 System.out.println("chaud");
             } else {
                 System.out.println("Gagné ! Nombre de tentatives : " + trials); 
