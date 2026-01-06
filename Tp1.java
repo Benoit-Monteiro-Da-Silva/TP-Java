@@ -16,7 +16,8 @@ public class Tp1 {
         // exercice2_1();
         // exercice2_2();
         // exercice3_1();
-        exercice4_1();
+        // exercice4_1();
+        exercice4_1_bis();
 
         scanner.close();
 
@@ -76,8 +77,8 @@ public class Tp1 {
         if (firstWord.length() == secondWord.length()) {
             System.out.println("Les deux mots ont le même nombre de caractères.");
         } else {
-            String longerWord = (firstWord.length() > secondWord.length()) ? firstWord : secondWord;
-            System.out.println(longerWord + " est le mot avec le plus de caractères.");
+            String longestWord = (firstWord.length() > secondWord.length()) ? firstWord : secondWord;
+            System.out.println(longestWord + " est le mot avec le plus de caractères.");
         }
 
     }
@@ -155,6 +156,39 @@ public class Tp1 {
             }
 
         }
+
+    }
+
+
+    public static void exercice4_1_bis() {
+
+        //On génère un entier aléatoire compris entre 0 et 100 inclus.
+        double randomDouble = Math.random() * 101;
+        int randomInt = (int) randomDouble;
+
+        int guess;
+        int trials = 0;
+        int diff;
+
+        do {
+            System.out.print("Entrez un nombre : ");
+            guess = scanner.nextInt();
+            trials++;
+
+            diff = Math.abs(guess - randomInt);
+
+            if (diff > 20) {
+                System.out.println("froid");
+            } else if (diff >= 6 && diff <= 20) {
+                System.out.println("tiède");
+            } else if (diff >=1 && diff <= 5) {
+                System.out.println("chaud");
+            } else {
+                System.out.println("Gagné ! Nombre de tentatives : " + trials); 
+            }
+
+        }
+        while (guess != randomInt);
 
     }
 
