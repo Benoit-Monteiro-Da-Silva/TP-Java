@@ -11,7 +11,8 @@ public class Tp2 {
         // fibonacciFirstMethod();
         // fibonacciSecondMethod();
         // fibonacciThirdMethod();
-        order();
+        // order();
+        orderBubble();
 
         scanner.close();
 
@@ -107,6 +108,7 @@ public class Tp2 {
 
     public static void order() {
 
+        //On déclare et on remplit un tableau d'entiers
         int[] intArray = new int[7];
         intArray[0] = 9;
         intArray[1] = 4;
@@ -116,11 +118,15 @@ public class Tp2 {
         intArray[5] = 2;
         intArray[6] = 7;
 
+        //On créé un tableau représentant l'histogramme de chaque valeur présente dans le premier tableau.
+        //Le nombre de cases de ce tableau correspond à la valeur max possible dans le premier tableau (ici 10 cases, pour une valeur max de 9)
         int[] histoArray = new int[10];
         for (int i = 0 ; i < intArray.length ; i++) {
             histoArray[ intArray[i] ]++;
         }
 
+        //On créé et on remplit un troisième tableau, de la même taille que le premier.
+        //On parcourt l'histogramme et on ajoute chaque valeur autant de fois que nécessaire dans ce troisième tableau.
         int[] orderedArray = new int[intArray.length];
         int track = 0;
         for (int i = 0 ; i < histoArray.length ; i++) {
@@ -130,10 +136,42 @@ public class Tp2 {
             }
         }
 
+        //On affiche tous les éléments du troisième tableau, qui correspondent aux valeurs du premier tableau triées dans l'ordre croissant.
         for(int i = 0 ; i < orderedArray.length ; i++) {
-            System.out.println(orderedArray[i]);
+            System.out.print(orderedArray[i] + " ");
         }
 
+    }
+
+    public static void orderBubble() {
+
+        //On déclare et on remplit un tableau d'entiers
+        int[] intArray = new int[7];
+        intArray[0] = 9;
+        intArray[1] = 4;
+        intArray[2] = 6;
+        intArray[3] = 4;
+        intArray[4] = 7;
+        intArray[5] = 2;
+        intArray[6] = 7;
+
+        //On permute chaque paire d'entiers consécutifs du tableau lorsque le premier est supérieur au second.
+        //Une fois le tableau parcouru entièrement, on a placé le plus grand entier à la fin du tableau.
+        //On répète alors l'opération avec seulement les éléments restants pour trier le tableau entièrement.
+        for (int j = 0 ; j < (intArray.length - 1) ; j++) {
+            for (int i = 0 ; i < (intArray.length - 1 - j) ; i++) {
+                if ( intArray[i] > intArray[i+1] ) {
+                    int storedValue = intArray[i];
+                    intArray[i] = intArray[i+1];
+                    intArray[i+1] = storedValue;
+                }
+            }
+        }
+
+        //On affiche tous les éléments du tableau, qui se retrouvent triés dans l'ordre croissant.
+        for (int i = 0 ; i < intArray.length ; i++) {
+            System.out.print(intArray[i] + " ");
+        }
     }
 
 }
