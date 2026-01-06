@@ -9,8 +9,9 @@ public class Tp2 {
         scanner = new Scanner(System.in);
 
         // fibonacciFirstMethod();
-        fibonacciSecondMethod();
+        // fibonacciSecondMethod();
         // fibonacciThirdMethod();
+        order();
 
         scanner.close();
 
@@ -80,11 +81,12 @@ public class Tp2 {
     public static int calculateFibonacci(int n) {
         if (n == 0) {
             return 0;
-        } else if (n == 1) {
+        } 
+        if (n == 1) {
             return 1;
-        } else {
-            return calculateFibonacci(n-1) + calculateFibonacci(n-2);
         }
+
+        return calculateFibonacci(n-1) + calculateFibonacci(n-2);
     }
 
     public static void fibonacciThirdMethod() {
@@ -100,6 +102,38 @@ public class Tp2 {
             int result = calculateFibonacci(number);
             System.out.println("F" + number + " = " + result);
         }
+    }
+
+
+    public static void order() {
+
+        int[] intArray = new int[7];
+        intArray[0] = 9;
+        intArray[1] = 4;
+        intArray[2] = 6;
+        intArray[3] = 4;
+        intArray[4] = 7;
+        intArray[5] = 2;
+        intArray[6] = 7;
+
+        int[] histoArray = new int[10];
+        for (int i = 0 ; i < intArray.length ; i++) {
+            histoArray[ intArray[i] ]++;
+        }
+
+        int[] orderedArray = new int[intArray.length];
+        int track = 0;
+        for (int i = 0 ; i < histoArray.length ; i++) {
+            for (int j = 0 ; j < histoArray[i] ; j++) {
+                orderedArray[track] = i;
+                track++;
+            }
+        }
+
+        for(int i = 0 ; i < orderedArray.length ; i++) {
+            System.out.println(orderedArray[i]);
+        }
+
     }
 
 }
