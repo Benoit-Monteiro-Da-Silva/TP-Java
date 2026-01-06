@@ -180,7 +180,6 @@ public class Tp1 {
 
     }
 
-
     public static void exercice4_2() {
 
         //On génère un entier aléatoire compris entre 0 et 100 inclus.
