@@ -11,8 +11,13 @@ public class Tp2 {
         // fibonacciFirstMethod();
         // fibonacciSecondMethod();
         // fibonacciThirdMethod();
-        // order();
-        orderBubble();
+        // histoSort();
+        // bubbleSort();
+        quickSort(0, (intArray.length - 1));
+
+        for (int i = 0 ; i < intArray.length ; i++) {
+            System.out.print(intArray[i] + " ");
+        }
 
         scanner.close();
 
@@ -105,8 +110,7 @@ public class Tp2 {
         }
     }
 
-
-    public static void order() {
+    public static void histoSort() {
 
         //On déclare et on remplit un tableau d'entiers
         int[] intArray = new int[7];
@@ -143,7 +147,7 @@ public class Tp2 {
 
     }
 
-    public static void orderBubble() {
+    public static void bubbleSort() {
 
         //On déclare et on remplit un tableau d'entiers
         int[] intArray = new int[7];
@@ -172,6 +176,61 @@ public class Tp2 {
         for (int i = 0 ; i < intArray.length ; i++) {
             System.out.print(intArray[i] + " ");
         }
+
+    }
+
+
+    private static int[] intArray = {6, 3, 7, 9, 1, 5, 4};
+
+    public static void quickSort(int firstIndice, int lastIndice) {
+
+        int pivotIndice = lastIndice;
+        int pivotValue = intArray[pivotIndice];
+        int valueToCompareIndice = firstIndice;
+        int valueToCompare = intArray[valueToCompareIndice];
+
+        while (pivotIndice > valueToCompareIndice) {
+            
+            if (pivotValue < valueToCompare) {
+
+                if (pivotIndice - valueToCompareIndice != 1) {
+                    //First permutation
+                    intArray[pivotIndice] = intArray[pivotIndice - 1];
+                    intArray[pivotIndice - 1] = pivotValue;
+                    //Pivot position changed
+                    pivotIndice--;
+        
+                    //Second permutation
+                    intArray[valueToCompareIndice] = intArray[pivotIndice + 1];
+                    intArray[pivotIndice + 1] = valueToCompare;
+                    //Value to compare changed
+                    valueToCompare = intArray[valueToCompareIndice];
+
+                } else {
+                    //Only one permutation is necessary
+                    intArray[valueToCompareIndice] = pivotValue;
+                    intArray[pivotIndice] = valueToCompare;
+                    pivotIndice--;
+                    valueToCompareIndice++;
+                }
+                
+            } else {
+                //No permutation necessary
+                valueToCompareIndice++;
+                valueToCompare = intArray[valueToCompareIndice];
+            }
+
+        }
+
+        //On relance si nécessaire sur les parties du tableau à gauche et à droite de la position du pivot.
+        if (pivotIndice - firstIndice >= 2) {
+            quickSort(firstIndice, pivotIndice - 1);
+        }
+
+        if (lastIndice - pivotIndice >=2) {
+            quickSort(pivotIndice + 1, lastIndice);
+        }
+
     }
 
 }
